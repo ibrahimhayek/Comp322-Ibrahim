@@ -3,32 +3,19 @@ Last Edited by Ibrahim Hayek
 
 Directory contains Zero-One.c, Input.txt, and Makefile.
 
-Input.txt contains 0's and 1's as a test file, user may edit this for testing
-results.
+Input.txt contains 0's and 1's as a test file, user may edit this for testing results.
 
 
 How to compile:
 ==============
-
-Open a terminal and issue the 'make' command as below from inside the program folder
-
-
-
-$> make all
-
-
+Issue the "Make" command
 
 This will create the executable 'version1'
 
 
-
-How to Run:
-==========
-
-$> ./version1  [INPUT-FILE] 
-
-where INPUT-FILE is optional when omitted will be 
-prompted to enter the input file name
+Running:
+==============
+You can run ./version1 and you will be prompted to type in file containing 1' and 0's (example: input.txt) or $> ./version 1 "inputfilename" (ex: ./version1 input.txt)
 
 
 
