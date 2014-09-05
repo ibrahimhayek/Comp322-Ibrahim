@@ -117,7 +117,7 @@ int read_next_set(int fd, char* buff)
 
 int main(int argc, char *argv[])
 {
-	int fd;                // file descriptor of input file
+	int fd=-1;             // file descriptor of input file
 	char buff[9];          // buffer to read 8 characters from the file
 	char inputFile[20];    // name of the input file
 		
@@ -138,22 +138,29 @@ int main(int argc, char *argv[])
 	else    // there is no command line argument
 	{
 		// prompt user to enter the filename through stdin (console/keyboard)
-		printf("Enter input file name: ");
+		//printf("Enter input file name: ");
 		// read the input file name from stdin
-		scanf("%s", inputFile);
+		//scanf("%s", inputFile);
+		
+		// read from STDIN
+		fd = 0;
 	}
 	
-	// open the input file for reading, exit if there is any error
-	fd = open(inputFile, O_RDONLY);
+	// open the input file for reading if passed as command line argument
 	if(fd < 0)
 	{
-		printf("\nerror: file %s could not be opened for reading!\n", inputFile);
+		fd = open(inputFile, O_RDONLY);
+	}
+	
+	if(fd < 0)
+	{
+		printf("\nI/O error: could not read from console or file!\n", inputFile);
 		exit(0);
 	}
 	
 	// display the header of the output
-	printf("\nOriginal\tASCII\t\tDecimal\tParity\n");
-	printf("\n--------\t-----\t\t-------\t------\n");
+	printf("\nOriginal\tASCII\t\tDecimal\tParity\tT.Error");
+	printf("\n--------\t-----\t\t-------\t------\t-------\n");
 	
 	
 	// read 8 characters at a time from the file
@@ -195,12 +202,13 @@ int main(int argc, char *argv[])
 		int parity = count_parity(buff);
 		if((parity % 2) == 0)  // EVEN value
 		{
-			printf("EVEN\n");
+			printf("EVEN\tFALSE\n");
 		}
 		else  // ODD value
 		{
-			printf("ODD\n");
+			printf("ODD\tTRUE\n");
 		}
+
 	}
 		
 	// close the input file

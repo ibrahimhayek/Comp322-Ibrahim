@@ -15,7 +15,11 @@ This will create the executable 'version1'
 
 Running:
 ==============
-You can run ./version1 and you will be prompted to type in file containing 1' and 0's (example: input.txt) or $> ./version 1 "inputfilename" (ex: version1 input.txt)
+1st Way: ./version1 and you will be prompted to type in file containing 1' and 0's (example: input.txt) 
+
+2nd Way: $> ./version 1 "inputfilename" (ex: version1 input.txt) 
+
+3rd Way: cat input-file.txt | version1 (ex: cat input.txt | version1)
 
 
 
