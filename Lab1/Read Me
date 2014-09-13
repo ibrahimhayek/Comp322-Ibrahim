@@ -1,0 +1,25 @@
+Lab 1 Time 4 Baby and Me Version 1
+
+1. Prints the start time.
+
+2. Spawns a child process.
+
+3. Waits for the child to finish.
+
+4. Reports (Program and child) the following:
+--process id of parent
+--own process id
+--process id of child
+--return status of child
+
+5. Reports the following time information:
+--user time of parent
+--system time of parent
+--user time of child
+--system time of child
+
+6. Prints the end time
+
+
+
+
